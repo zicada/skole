@@ -7,7 +7,7 @@ public class Oppgave5 {
 		
 		stud1.settAlder(28);
 		System.out.println(stud1.hentAlder());
-		stud1.settFornavn("Petter");
+		stud1.settFornavn("mongo");
 		System.out.println(stud1.hentFornavn());
 		System.out.println(stud1.hentEtternavn());
 		
