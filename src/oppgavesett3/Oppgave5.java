@@ -5,7 +5,7 @@ public class Oppgave5 {
 		Student stud1 = new Student("Per","Jensen",24);
 		Student stud2 = new Student("Jens","Persen",32);
 		
-		stud1.settAlder(32);
+		stud1.settAlder(29);
 		System.out.println(stud1.hentAlder());
 		stud1.settFornavn("Petter");
 		System.out.println(stud1.hentFornavn());
