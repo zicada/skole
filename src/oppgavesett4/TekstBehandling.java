@@ -32,12 +32,11 @@ public class TekstBehandling {
 		StringBuilder builder = new StringBuilder();
 		String strengMedHashes = "";
 		strengMedHashes = tekst .replaceAll("\\!","#")
-			.replaceAll("\\?","#")
-			.replaceAll("\\,","#")
-			.replaceAll("\\.","#");
+					.replaceAll("\\?","#")
+					.replaceAll("\\,","#")
+					.replaceAll("\\.","#");
 		String[] periodeArray = strengMedHashes.split("#");
 		
-		int count = 0;
 		int lengde = 0;
 		for (String i: periodeArray){
 			if (i.startsWith(" ")){
