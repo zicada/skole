@@ -30,13 +30,11 @@ public class TekstBehandling {
 	}
 	public String perPeriode(){
 		StringBuilder builder = new StringBuilder();
-		String strengMedHashes = "";
-		strengMedHashes = tekst .replaceAll("\\!","#")
+		String strengMedHashes = tekst .replaceAll("\\!","#")
 					.replaceAll("\\?","#")
 					.replaceAll("\\,","#")
 					.replaceAll("\\.","#");
 		String[] periodeArray = strengMedHashes.split("#");
-		
 		int lengde = 0;
 		for (String i: periodeArray){
 			if (i.startsWith(" ")){
@@ -48,9 +46,7 @@ public class TekstBehandling {
 			}
 			builder.append(i +": " + lengde / setningArray.length  + "\n");
 			lengde = 0;
-			
 		}
-		
 		return builder.toString();
 	}
 }
