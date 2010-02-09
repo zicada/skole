@@ -31,9 +31,9 @@ public class TekstBehandling {
 	public String perPeriode(){
 		StringBuilder builder = new StringBuilder();
 		String strengMedHashes = tekst .replaceAll("\\!","#")
-					.replaceAll("\\?","#")
-					.replaceAll("\\,","#")
-					.replaceAll("\\.","#");
+						.replaceAll("\\?","#")
+						.replaceAll("\\,","#")
+						.replaceAll("\\.","#");
 		String[] periodeArray = strengMedHashes.split("#");
 		int lengde = 0;
 		for (String i: periodeArray){
