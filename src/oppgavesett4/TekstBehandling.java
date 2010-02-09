@@ -1,12 +1,16 @@
 package oppgavesett4;
 
-import java.awt.image.ReplicateScaleFilter;
-import java.util.HashMap;
+import java.text.DecimalFormat;
 
 // Dette er oppgave 5
 public class TekstBehandling {
 	private String tekst;
 	
+	// Metode for å runde av double til 2 decimaler.
+	double rundAv(double d) {
+    	DecimalFormat dec = new DecimalFormat("#.##");
+    	return Double.valueOf(dec.format(d));
+	}
 	public TekstBehandling(String t){
 		tekst = t;
 	}
@@ -26,7 +30,7 @@ public class TekstBehandling {
 		for(String i: antall){
 			lengde += i.length();
 		}
-		return (lengde / antall.length);
+		return rundAv(lengde / antall.length);
 	}
 	public String perPeriode(){
 		StringBuilder builder = new StringBuilder();
@@ -35,7 +39,7 @@ public class TekstBehandling {
 						.replaceAll("\\,","#")
 						.replaceAll("\\.","#");
 		String[] periodeArray = strengMedHashes.split("#");
-		int lengde = 0;
+		double lengde = 0;
 		for (String i: periodeArray){
 			if (i.startsWith(" ")){
 				i = i.replaceFirst(" ", "");
@@ -44,7 +48,7 @@ public class TekstBehandling {
 			for (String j: setningArray){
 				 lengde += j.length();
 			}
-			builder.append(i +": " + lengde / setningArray.length  + "\n");
+			builder.append(i +": " + rundAv(lengde / setningArray.length)  + "\n");
 			lengde = 0;
 		}
 		return builder.toString();

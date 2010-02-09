@@ -12,10 +12,10 @@ public class Oppgave3 {
 				"as it will be faster under most implementations.");
 
 		
-		System.out.println(tekst.antallOrd());
-		System.out.println(tekst.hentTekst());
-		System.out.println(tekst.hentUcase());
-		System.out.println(tekst.ordLengde());
-		System.out.println(tekst.perPeriode());
+		System.out.println(tekst.antallOrd()+"\n");
+		System.out.println(tekst.hentTekst()+"\n");
+		System.out.println(tekst.hentUcase()+"\n");
+		System.out.println(tekst.ordLengde()+"\n");
+		System.out.println(tekst.perPeriode()+"\n");
 	}
 }
