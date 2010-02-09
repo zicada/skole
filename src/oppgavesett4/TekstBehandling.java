@@ -35,7 +35,23 @@ public class TekstBehandling {
 								.replaceAll("\\?","#")
 								.replaceAll("\\,","#")
 								.replaceAll("\\.","#");
-		String[] periodeArray = strengMedHashes.split("# ");
-		return "temp";
+		String[] periodeArray = strengMedHashes.split("#");
+		
+		int count = 0;
+		int lengde = 0;
+		for (String i: periodeArray){
+			if (i.startsWith(" ")){
+				i = i.replaceFirst(" ", "");
+			}
+			String[] setningArray = i.split(" ");
+			for (String j: setningArray){
+				 lengde += j.length();
+			}
+			builder.append(i +": " + lengde / setningArray.length  + "\n");
+			lengde = 0;
+			
+		}
+		
+		return builder.toString();
 	}
 }
