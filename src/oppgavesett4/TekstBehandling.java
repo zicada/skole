@@ -7,9 +7,9 @@ public class TekstBehandling {
 	private String tekst;
 	
 	// Metode for å runde av double til 2 decimaler.
-	double rundAv(double d) {
-    	DecimalFormat dec = new DecimalFormat("#.##");
-    	return Double.valueOf(dec.format(d));
+	public double rundAv(double d) {
+		DecimalFormat dec = new DecimalFormat("#.##");
+		return Double.valueOf(dec.format(d));
 	}
 	public TekstBehandling(String t){
 		tekst = t;
