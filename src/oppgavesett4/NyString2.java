@@ -10,20 +10,23 @@ package oppgavesett4;
 public class NyString2 {
 	private String tekst;
 	StringBuilder builder = new StringBuilder();
-	public NyString2(String o){
+
+	public NyString2(String o) {
 		tekst = o;
 	}
-	public String forkorte(){
-		String[] ord = tekst.split(" ");
-		builder.append("Forkortelse: ");
-		for (String i: ord){
-			builder.append(i.substring(0, 1));
-		}
+
+	public String fjerne(String bokstav) {
+		builder.append("Resultat med " + bokstav + " fjernet: \n");
+		builder.append(tekst.replaceAll(bokstav, ""));
 		return builder.toString();
 	}
-	public String fjerne(String bokstav){
-		builder.append("Resultat med "+bokstav +" fjernet: \n");
-		builder.append(tekst.replaceAll(bokstav, ""));
+
+	public String forkorte() {
+		String[] ord = tekst.split(" ");
+		builder.append("Forkortelse: ");
+		for (String i : ord) {
+			builder.append(i.substring(0, 1));
+		}
 		return builder.toString();
 	}
 }
