@@ -2,35 +2,35 @@ package oppgavesett4;
 
 public class Hund {
 
-	private String navn;
-	private String rase;
-	private int alder;
+	private String name;
+	private String race;
+	private int age;
 
 	public Hund(String n, String r, int a) {
-		navn = n;
-		rase = r;
-		alder = a;
+		name = n;
+		race = r;
+		age = a;
 	}
 
-	public int hentAlder() {
-		return alder;
+	public int getAge() {
+		return age;
 	}
 
-	public int hentMenneskeaar() {
-		return alder * 7;
+	public int getHumanYrs() {
+		return age * 7;
 	}
 
-	public String hentNavn() {
-		return navn;
+	public String getName() {
+		return name;
 	}
 
-	public String hentRase() {
-		return rase;
+	public String getRace() {
+		return race;
 	}
 
 	@Override
 	public String toString() {
-		String s = "Navn: " + navn + "\nRase: " + rase + "\nAlder: " + alder;
+		String s = "Name: " + name + "\nRace: " + race + "\nAge: " + age;
 		return s;
 	}
 }

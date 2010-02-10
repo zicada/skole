@@ -2,20 +2,20 @@ package oppgavesett4;
 
 // Dette er oppgave 3
 public class NyString {
-	private String tekst;
+	private String text;
 
 	public NyString(String o) {
-		tekst = o;
+		text = o;
 	}
 
-	public String fjerne(String bokstav) {
-		return tekst.replaceAll(bokstav, "");
+	public String remChar(String bokstav) {
+		return text.replaceAll(bokstav, "");
 	}
 
-	public String forkorte() {
-		String[] ord = tekst.split(" ");
+	public String abbreviate() {
+		String[] word = text.split(" ");
 		String result = "";
-		for (String i : ord) {
+		for (String i : word) {
 			result += i.substring(0, 1);
 		}
 		return result;

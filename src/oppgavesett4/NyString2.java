@@ -8,23 +8,23 @@ package oppgavesett4;
 // som split() og replaceALL() o.l.
 
 public class NyString2 {
-	private String tekst;
+	private String text;
 	StringBuilder builder = new StringBuilder();
 
 	public NyString2(String o) {
-		tekst = o;
+		text = o;
 	}
 
-	public String fjerne(String bokstav) {
-		builder.append("Resultat med " + bokstav + " fjernet: \n");
-		builder.append(tekst.replaceAll(bokstav, ""));
+	public String remChar(String letter) {
+		builder.append("Result after " + letter + " was removed: \n");
+		builder.append(text.replaceAll(letter, ""));
 		return builder.toString();
 	}
 
-	public String forkorte() {
-		String[] ord = tekst.split(" ");
-		builder.append("Forkortelse: ");
-		for (String i : ord) {
+	public String abbreviate() {
+		String[] word = text.split(" ");
+		builder.append("Abbreviation: ");
+		for (String i : word) {
 			builder.append(i.substring(0, 1));
 		}
 		return builder.toString();

@@ -2,29 +2,29 @@ package oppgavesett4;
 
 public class TallKnuser {
 
-	private int tall;
+	private int num;
 
 	public TallKnuser(int t) {
-		tall = t;
+		num = t;
 	}
 
-	public void doble() {
-		tall *= 2;
+	public void doubleNum() {
+		num *= 2;
 	}
 
-	public int hentTall() {
-		return tall;
+	public int getNum() {
+		return num;
 	}
 
-	public void kube() {
-		tall = (int) Math.pow(tall, 3);
+	public void cube() {
+		num = (int) Math.pow(num, 3);
 	}
 
-	public void kvadrat() {
-		tall = (int) Math.pow(tall, 2);
+	public void square() {
+		num = (int) Math.pow(num, 2);
 	}
 
-	public void treDoble() {
-		tall *= 3;
+	public void triple() {
+		num *= 3;
 	}
 }

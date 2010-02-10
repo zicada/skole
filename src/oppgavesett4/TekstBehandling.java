@@ -2,55 +2,55 @@ package oppgavesett4;
 
 // Dette er oppgave 5
 public class TekstBehandling {
-	private String tekst;
+	private String text;
 	StringBuilder builder = new StringBuilder();
 
 	public TekstBehandling(String t) {
-		tekst = t;
+		text = t;
 	}
 
-	public int antallOrd() {
-		String[] antall = tekst.split(" ");
-		return antall.length;
+	public int numWords() {
+		String[] amt = text.split(" ");
+		return amt.length;
 	}
 
-	public String finnOgBytt(String orig, String ny) {
-		builder.append(tekst.replace(orig, ny));
+	public String findAndReplace(String origStr, String newStr) {
+		builder.append(text.replace(origStr, newStr));
 		return builder.toString();
 	}
 
-	public String hentTekst() {
-		return tekst;
+	public String getText() {
+		return text;
 	}
 
-	public String hentUcase() {
-		return tekst.toUpperCase();
+	public String getUcase() {
+		return text.toUpperCase();
 	}
 
-	public double ordLengde() {
-		String[] antall = tekst.split(" ");
-		double lengde = 0;
-		for (String i : antall) {
-			lengde += i.length();
+	public double avgWordLen() {
+		String[] amt = text.split(" ");
+		double length = 0;
+		for (String i : amt) {
+			length += i.length();
 		}
-		return (lengde / antall.length);
+		return (length / amt.length);
 	}
 
-	public String perPeriode() {
-		String strengMedHashes = tekst.replaceAll("\\!", "#").replaceAll("\\?",
+	public String avgPerSentence() {
+		String strReplace = text.replaceAll("\\!", "#").replaceAll("\\?",
 				"#").replaceAll("\\,", "#").replaceAll("\\.", "#");
-		String[] periodeArray = strengMedHashes.split("#");
-		double lengde = 0;
-		for (String i : periodeArray) {
+		String[] sentenceArray = strReplace.split("#");
+		double length = 0;
+		for (String i : sentenceArray) {
 			if (i.startsWith(" ")) {
 				i = i.replaceFirst(" ", "");
 			}
-			String[] setningArray = i.split(" ");
-			for (String j : setningArray) {
-				lengde += j.length();
+			String[] wordArray = i.split(" ");
+			for (String j : wordArray) {
+				length += j.length();
 			}
-			builder.append(i + ": " + (lengde / setningArray.length) + "\n");
-			lengde = 0;
+			builder.append(i + ": " + (length / wordArray.length) + "\n");
+			length = 0;
 		}
 		return builder.toString();
 	}

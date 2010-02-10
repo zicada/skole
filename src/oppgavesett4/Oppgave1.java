@@ -5,26 +5,26 @@ import java.util.Scanner;
 public class Oppgave1 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Skriv inn et tall: ");
-		int tall = input.nextInt();
-		TallKnuser resultat = new TallKnuser(tall);
+		System.out.println("Enter any integer: ");
+		int num = input.nextInt();
+		TallKnuser resultat = new TallKnuser(num);
 		System.out
-				.println("Valg:\n1: Doble \t 2: Triple\t3: kvadrat \t4: kube\n");
-		int valg = input.nextInt();
-		switch (valg) {
+				.println("Otions:\n1: double \t 2: triple\t3: square \t4: cube\n");
+		int opt = input.nextInt();
+		switch (opt) {
 		case 1:
-			resultat.doble();
+			resultat.doubleNum();
 			break;
 		case 2:
-			resultat.treDoble();
+			resultat.triple();
 			break;
 		case 3:
-			resultat.kvadrat();
+			resultat.square();
 			break;
 		case 4:
-			resultat.kube();
+			resultat.cube();
 			break;
 		}
-		System.out.println("Resultat: " + resultat.hentTall());
+		System.out.println("Result: " + resultat.getNum());
 	}
 }
