@@ -3,6 +3,7 @@ package oppgavesett4;
 // Dette er oppgave 5
 public class TekstBehandling {
 	private String tekst;
+	StringBuilder builder = new StringBuilder();
 
 	public TekstBehandling(String t) {
 		tekst = t;
@@ -11,6 +12,11 @@ public class TekstBehandling {
 	public int antallOrd() {
 		String[] antall = tekst.split(" ");
 		return antall.length;
+	}
+
+	public String finnOgBytt(String orig, String ny) {
+		builder.append(tekst.replace(orig, ny));
+		return builder.toString();
 	}
 
 	public String hentTekst() {
@@ -31,7 +37,6 @@ public class TekstBehandling {
 	}
 
 	public String perPeriode() {
-		StringBuilder builder = new StringBuilder();
 		String strengMedHashes = tekst.replaceAll("\\!", "#").replaceAll("\\?",
 				"#").replaceAll("\\,", "#").replaceAll("\\.", "#");
 		String[] periodeArray = strengMedHashes.split("#");
@@ -44,8 +49,7 @@ public class TekstBehandling {
 			for (String j : setningArray) {
 				lengde += j.length();
 			}
-			builder.append(i + ": " + (lengde / setningArray.length)
-					+ "\n");
+			builder.append(i + ": " + (lengde / setningArray.length) + "\n");
 			lengde = 0;
 		}
 		return builder.toString();
